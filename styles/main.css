@@ -1,7 +1,15 @@
 /*URL FONTS*/
+/*colors:
+Primario: #FFB6C1 (rosa claro)
+Secundario: #8F00FF (violeta oscuro)
+Terciario: #FFDAB9 (melocotón claro)
+*/
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;900&display=swap");
-
+:root{
+    --primario: #FFB6C1;
+    --secundario: #8F00FF;
+}
 *{
     padding: 0;
     margin: 0;
@@ -19,13 +27,13 @@
 /*Calculator*/
 .calculator{
     width: 40%;
-    color: #063102;
+    color: var(--secundario);
 }
 
 /*heading*/
 .heading{
     font-size: 25px;
-    color: #0c8d00;
+    color: var(--primario);
 }
 
 /*inputs*/
@@ -34,19 +42,24 @@
 }
 .input-group label{
     display: block;
+    color: var(--primario);
 }
 .input-group input,
 .input-group button,
 .input-group select{
     width: 70%;
     padding: 12px;
-    border: 1px solid #0c8d00;
+    border: 1px solid var(--primario);
     outline: none;
     border-radius: 5px;
 }
 .input-group button{
-    background-color: #0c8d00;
-    color: white;
+    background-color:var(--primario);
+    color:var(--secundario);
+}
+.input-group input{
+    color: var(--primario);
+    font: bold;
 }
 
 /*Results*/
@@ -55,3 +68,33 @@
     width: 50%;
     margin: 10px;
 }
+
+/*options*/
+#compound option{
+    color: var(--primario);
+}
+/* estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+      
+    }
+    
+    .calculator,
+    .results {
+      width: 100%;
+    }
+  }
+  
+  /* estilos para pantallas más grandes */
+  @media (min-width: 1024px) {
+    .calculator {
+      margin-right: 20px;
+    }
+    
+    .results {
+      margin-left: 20px;
+    }
+  }
+  
