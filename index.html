@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Interes Compuesto</title>
+    <!--Chart.js-->
     <link rel="stylesheet" href="/styles/main.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
 </head>
@@ -23,19 +24,19 @@
                    <!--Initial Amount-->
                 <div class="input-group">
                     <label for="initial-amount">Initial amount</label>
-                    <input type="number" id="initial-amount">
+                    <input type="number" id="initial-amount" required>
                 </div>
 
                    <!--Invesment Year-->
                 <div class="input-group">
                     <label for="investment-years">Invesment Years </label>
-                    <input type="number" id="investment-years">
+                    <input type="number" id="investment-years" required>
                 </div>
 
                    <!--Estimated Rate-->
                 <div class="input-group">
                     <label for="estimated-rate">Estimated Rate(%)</label>
-                    <input type="number" id="estimated-rate">
+                    <input type="number" id="estimated-rate" required>
                 </div>
 
                  <!--Options-->
@@ -58,6 +59,7 @@
         </div>
         <!--Draw results-->
         <div class="results">
+            <h3 id="message"></h3>
             <canvas id="data-set"></canvas>
         </div>
     </section>

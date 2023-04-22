@@ -7,7 +7,7 @@ Terciario: #FFDAB9 (melocotón claro)
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;900&display=swap");
 :root{
-    --primario: #FFB6C1;
+    --primario: rgb(255, 182, 193);
     --secundario: #8F00FF;
 }
 *{
@@ -34,6 +34,11 @@ Terciario: #FFDAB9 (melocotón claro)
 .heading{
     font-size: 25px;
     color: var(--primario);
+}
+
+#message{
+    font-size: 20px;
+    color: var(--secundario);
 }
 
 /*inputs*/
@@ -67,6 +72,10 @@ Terciario: #FFDAB9 (melocotón claro)
     box-shadow: 0px 0px 10px 3px rgba(6, 49, 2, 0.25) ;
     width: 50%;
     margin: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 /*options*/
