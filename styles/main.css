@@ -16,11 +16,16 @@ Terciario: #FFDAB9 (melocotón claro)
     font-family: "Montserrat",sans-serif;
     box-sizing: border-box;
 }
+.inactive{
+    display: none;
+}
 /*container*/
 .container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     margin: 40px;
 }
 
@@ -66,6 +71,12 @@ Terciario: #FFDAB9 (melocotón claro)
     color: var(--primario);
     font: bold;
 }
+.btn-table{
+    width: 40%;
+    padding: 12px;
+    outline: none;
+    border-radius: 5px;
+}
 
 /*Results*/
 .results{
@@ -82,6 +93,45 @@ Terciario: #FFDAB9 (melocotón claro)
 #compound option{
     color: var(--primario);
 }
+/* Estilos para la tabla personalizada */
+.styled-table {
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--primario);
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    
+}
+.table{
+    
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.styled-table thead tr {
+    background-color: var(--primario);
+    color: var(--secundario);
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+
 /* estilos para pantallas más pequeñas */
 @media (max-width: 768px) {
     .container {
@@ -93,6 +143,9 @@ Terciario: #FFDAB9 (melocotón claro)
     .calculator,
     .results {
       width: 100%;
+    }
+    .styled-table {
+        font-size: 0.8em;
     }
   }
   

@@ -51,18 +51,25 @@
                 </div>
 
                   <!--Button-->
-                <div class="input-group">
+                <div class="input-group ">
                    <button>Calculate</button>
                 </div>
-
             </form>
         </div>
         <!--Draw results-->
-        <div class="results">
+        <div class="results inactive">
             <h3 id="message"></h3>
-            <canvas id="data-set"></canvas>
+            <canvas id="data-set" class="inactive"></canvas>
         </div>
+        <div class="input-group btn-table">
+            <button id="show-table">Show Table</button>
+         </div>
     </section>
+    <div class="table">
+        <table class="styled-table">
+            
+        </table>
+    </div>
     <script src="/js/app.js"></script>
 </body>
 </html>
