@@ -8,14 +8,25 @@ const initialAmount = document.getElementById("initial-amount"),
       years = document.getElementById("investment-years"),
       rates = document.getElementById("estimated-rate"),
       compound = document.getElementById("compound"),
-      form = document.getElementById("compoun-form"),
-      table = document.getElementsByClassName("styled-table");
+      form = document.getElementById("compoun-form");
 
 // calculate butoton
 const button = document.querySelector(".input-group button");
-
 // attach an event listenet
 button.addEventListener("click",calculateGrowth)
+
+const table = document.querySelector(".styled-table");
+const buttonShowTable = document.querySelector("#show-table")
+buttonShowTable.addEventListener('click',()=>{
+    
+    if(table.classList.contains('inactive')){
+      table.classList.remove('inactive');
+      buttonShowTable.innerText = "Hide Table" 
+    } else{
+        table.classList.add('inactive');
+        buttonShowTable.innerText = "Show Table"
+    }
+})
 
 //declare arrays
 const data =[];
@@ -49,7 +60,8 @@ function calculateGrowth(e){
         const results = document.getElementById("results");
         message.innerText = `You will have this amount ${growth} after ${period} years`;
         drawGraph();
-        console.log(reduceArrays());
+        showTable()
+        
         
     } catch (error) {
         console.error(error)
@@ -58,27 +70,26 @@ function calculateGrowth(e){
     
 }
 function showTable() {
-    let showInfo="";
-    obj = reduceArrays();
-    for (const item of obj) {
-        showInfo=`
-        <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Edad</th>
-                    <th>País</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>John</td>
-                    <td>30</td>
-                    <td>USA</td>
-                </tr>
-            </tbody>`;
-    }
-    console.log(showInfo);
-  }
+    const thead = document.getElementById("thead-show"),
+        tbody = document.getElementById("tbody-show");
+    let th=`
+    <th>Years</th>
+    <th>Valor Futuro ${rates.value}%</th>
+    <th>Contribuciones Totales</th>`;
+    thead.innerHTML=th;
+    
+    let tr ="<tr>";
+    
+    for (var i = 0; i < labels.length; i++) {
+        tr += "<td>" + labels[i] + "</td>";
+        tr += "<td>" + "$ "+data[i] + "</td>";
+        tr += "<td>" + "$ "+ (initialAmount.value) + "</td>";
+        tr+="</tr>"
+      }
+     
+      
+      tbody.innerHTML=tr;
+}
   
 function reduceArrays(){
     const obj = labels.reduce((acc, key, index) => {

@@ -105,7 +105,7 @@ Terciario: #FFDAB9 (melocotón claro)
     
 }
 .table{
-    
+    text-align: center;
     margin: 10px;
     padding: 20px;
     display: flex;
