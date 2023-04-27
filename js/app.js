@@ -74,8 +74,8 @@ function showTable() {
         tbody = document.getElementById("tbody-show");
     let th=`
     <th>Years</th>
-    <th>Valor Futuro ${rates.value}%</th>
-    <th>Contribuciones Totales</th>`;
+    <th>Future Value (${rates.value}%)</th>
+    <th>Total Contributions</th>`;
     thead.innerHTML=th;
     
     let tr ="<tr>";
@@ -91,13 +91,6 @@ function showTable() {
       tbody.innerHTML=tr;
 }
   
-function reduceArrays(){
-    const obj = labels.reduce((acc, key, index) => {
-        acc[key] = data[index];
-        return acc;
-      }, {});
-    return obj;
-}
 function drawGraph(){
     line.destroy();
     // constructor
@@ -109,7 +102,7 @@ function drawGraph(){
                 label: "Compound",
                 data,
                 fill: true,
-                backgroundColor: "rgb(255, 182, 193)",
+                backgroundColor: "#7C9070",
                 borderWidth: 3
             }]
         }
